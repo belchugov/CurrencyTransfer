@@ -15,8 +15,8 @@ $RECYCLE.BIN/
 *.msp
 
 #local folders
-.idea
-design
+.idea/
+design/
 
 # =========================
 # Operating System Files

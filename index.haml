@@ -1,0 +1,23 @@
+!!!
+%html
+  %head{:lang => "en"}
+    %meta{:charset => "UTF-8"}/
+    %title CurrencyTransfer Test page
+    %link{:href => "scss/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "scss/style.css", :rel => "stylesheet"}/
+  %body
+    .content
+      .content-headline
+        %h1 Live quotes
+        .expire
+          Quotes expires in:
+          %span 4 seconds
+      .status
+      .trade-info
+        %p The market rate for transferring
+        %div
+          %span.currency-from GBP
+          %span.exchange-rate 1.6134
+          %span.currency-to USD
+      .providers-list
+        .provider
