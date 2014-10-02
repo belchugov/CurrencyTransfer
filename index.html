@@ -5,6 +5,7 @@
     <title>CurrencyTransfer Test page</title>
     <link href='scss/normalize.css' rel='stylesheet'>
     <link href='scss/style.css' rel='stylesheet'>
+    <link href='scss/flag-icon.css' rel='stylesheet'>
   </head>
   <body>
     <div class='content'>
@@ -19,14 +20,74 @@
       <div class='trade-info'>
         <p>The market rate for transferring</p>
         <div>
-          <span class='currency-from'>GBP</span>
+          <span class='currency-from'>
+            <span class='flag-icon flag-icon-gb'></span>
+            GBP
+          </span>
           <span class='exchange-rate'>1.6134</span>
-          <span class='currency-to'>USD</span>
+          <span class='currency-to'>
+            USD
+            <span class='flag-icon flag-icon-us'></span>
+          </span>
         </div>
       </div>
-      <div class='providers-list'>
-        <div class='provider'></div>
-      </div>
+      <table class='table providers-list'>
+        <thead>
+          <tr>
+            <td></td>
+            <td>Sending</td>
+            <td>Your rate</td>
+            <td>Receive</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class='provider'>
+            <td>
+              <img alt='Provider logo' src='http://lorempixel.com/120/70/business/1'>
+            </td>
+            <td class='send-recive-currency'>
+              20,000.00
+              <span>GBP</span>
+            </td>
+            <td>
+              <span class='provider-rate'>51.128</span>
+            </td>
+            <td class='send-recive-currency'>
+              35,000.00
+              <span>USD</span>
+            </td>
+            <td>
+              <div class='book-wrapper'>
+                <a class='book-btn btn' href='#'>Book</a>
+                <span>£11,020 Saving</span>
+              </div>
+            </td>
+          </tr>
+          <tr class='provider'>
+            <td>
+              <img alt='Provider logo' src='http://lorempixel.com/120/70/business/2'>
+            </td>
+            <td class='send-recive-currency'>
+              1,000,000.00
+              <span>GBP</span>
+            </td>
+            <td>
+              <span class='provider-rate'>51.128</span>
+            </td>
+            <td class='send-recive-currency'>
+              173,084,568.00
+              <span>JPY</span>
+            </td>
+            <td>
+              <div class='book-wrapper'>
+                <a class='book-btn btn' href='#'>Book</a>
+                <span>£11,020 Saving</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

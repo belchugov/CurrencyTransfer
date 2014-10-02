@@ -5,6 +5,7 @@
     %title CurrencyTransfer Test page
     %link{:href => "scss/normalize.css", :rel => "stylesheet"}/
     %link{:href => "scss/style.css", :rel => "stylesheet"}/
+    %link{:href => "scss/flag-icon.css", :rel => "stylesheet"}/
   %body
     .content
       .content-headline
@@ -16,8 +17,49 @@
       .trade-info
         %p The market rate for transferring
         %div
-          %span.currency-from GBP
+          %span.currency-from
+            %span.flag-icon.flag-icon-gb
+            GBP
           %span.exchange-rate 1.6134
-          %span.currency-to USD
-      .providers-list
-        .provider
+          %span.currency-to
+            USD
+            %span.flag-icon.flag-icon-us
+      %table.table.providers-list
+        %thead
+          %tr
+            %td
+            %td Sending
+            %td Your rate
+            %td Receive
+            %td
+        %tbody
+          %tr.provider
+            %td
+              %img{:alt => "Provider logo", :src => "http://lorempixel.com/120/70/business/1"}/
+            %td.send-recive-currency
+              20,000.00
+              %span GBP
+            %td
+              %span.provider-rate 51.128
+            %td.send-recive-currency
+              35,000.00
+              %span USD
+            %td
+              %div.book-wrapper
+                %a.book-btn.btn{:href => "#"} Book
+                %span £11,020 Saving
+          %tr.provider
+            %td
+              %img{:alt => "Provider logo", :src => "http://lorempixel.com/120/70/business/2"}/
+            %td.send-recive-currency
+              1,000,000.00
+              %span GBP
+            %td
+              %span.provider-rate 51.128
+            %td.send-recive-currency
+              173,084,568.00
+              %span JPY
+            %td
+              %div.book-wrapper
+                %a.book-btn.btn{:href => "#"} Book
+                %span £11,020 Saving

@@ -77,19 +77,14 @@ textarea {
 }
 
 /* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-/* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
 
 $family: unquote("Lato:400,700");
 @import url("http://fonts.googleapis.com/css?family=#{$family}");
@@ -99,11 +94,15 @@ body {
   background-color: #eee;
   color: #555555;
 }
+a {
+  text-decoration: none;
+}
 .content {
-  width: 600px;
+  width: 700px;
   margin: 60px auto;
   background-color: #FFF;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding-bottom: 30px;
   h1 {
     font-size: 1.188em;
     font-weight: 600;
@@ -133,18 +132,21 @@ body {
 }
 .trade-info {
   text-align: center;
+  margin-bottom: 28px;
   p {
+    margin-top: 6px;
+    margin-bottom: 12px;
   }
 }
 .status {
   height: 4px;
   background-color: #78be54;
 }
-.currency-from {
-
-}
-.currency-to {
-
+.currency-from, .currency-to {
+  font-size: 1.125em;
+  span {
+    font-size: 20px;
+  }
 }
 .exchange-rate {
   background-color: #195d7e;
@@ -172,11 +174,85 @@ body {
     margin-right: -20px;
   }
 }
+/* ==========================================================================
+   Provider list styles
+   ========================================================================== */
 
+.table {
+  width: 100%;
+  font-size: 0.875em;
+  thead{
+    tr {
+      border-bottom: 1px solid #c1c3c5;
+    }
+    td {
+      text-align: center;
+    }
+  }
+  tbody {
+    border-bottom: 1px solid #c1c3c5;
+    tr:nth-child(2n) {
+      background-color: #eeeeee;
+    }
+    td {
+      padding: 13px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+.provider-rate {
+  background: url("../img/provider-arrow.png") no-repeat left center,
+              url("../img/provider-arrow.png") no-repeat right center;
+  height: 52px;
+  display: block;
+  vertical-align: middle;
+  padding: 15px 30px;
+}
+.table td.send-recive-currency {
+  font-weight: 600;
+}
+.book-wrapper {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  border-radius: 3px;
+  width: 120px;
+  background-color: #FFFFFF;
+  span {
+    font-size: 0.857em;
+    font-weight: 600;
+    color: #14af78;
+  }
+}
 
-
-
-
+/* ==========================================================================
+   Buttons styles
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 6px 37px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px
+}
+.book-btn {
+  color: #fff;
+  background-color: #14af78;
+  border-color: #d3f0e6;
+  text-transform: uppercase;
+}
 
 
 
