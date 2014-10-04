@@ -1,0 +1,73 @@
+!!!
+%html{"ng-app" => ""}
+  %head{:lang => "en"}
+    %meta{:charset => "UTF-8"}/
+    %title CurrencyTransfer Test page
+    %link{:href => "css/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "css/style.css", :rel => "stylesheet"}/
+    %link{:href => "css/flag-icon.css", :rel => "stylesheet"}/
+
+    %script{:src => "js/libs/angular.min.js"}
+    %script{:src => "js/app.js"}
+  %body
+    .content{"ng-controller" => "LiveQuotes"}
+      .content-headline
+        %h1 Live quotes
+        .expire
+          Quotes expires in:
+          %span {{ counter }} seconds
+      .status
+      .trade-info
+        %p The market rate for transferring
+        %div
+          %span.currency-from
+            %span.flag-icon.flag-icon-gb
+            GBP
+          %span.exchange-rate 1.6134
+          %span.currency-to
+            USD
+            %span.flag-icon.flag-icon-us
+      %div.providers-list-wrapper
+        %div.overlay{"ng-class" => "counter === 0 ? 'active'  : '' "}
+          %a.btn.refresh-quote{:href => "#"}
+            %span
+            refresh quote
+        %table.table.providers-list
+          %thead
+            %tr
+              %td
+              %td Sending
+              %td Your rate
+              %td Receive
+              %td
+          %tbody
+            %tr.provider{"ng-repeat" => "provider in providers"}
+              %td
+                %img{:alt => "{{ provider.name }}", :src => "http://lorempixel.com/120/70/business/{{ $index }}"}/
+              %td.send-receive-currency
+                {{ provider.sending | currency:"" }}
+                %span {{ provider.sendingISO }}
+              %td
+                %span.provider-rate {{ provider.rate }}
+              %td.send-receive-currency
+                {{ provider.receive | currency:""}}
+                %span {{ provider.receiveISO }}
+              %td
+                %div.book-wrapper
+                  %a.book-btn.btn{:href => "#"} Book
+                  %span {{ provider.saving | currency:provider.savingISO}} Saving
+            -#%tr.provider
+            -#  %td
+            -#    %img{:alt => "Provider logo", :src => "http://lorempixel.com/120/70/business/2"}/
+            -#  %td.send-recive-currency
+            -#    1,000,000.00
+            -#    %span GBP
+            -#  %td
+            -#    %span.provider-rate 51.128
+            -#  %td.send-recive-currency
+            -#    173,084,568.00
+            -#    %span JPY
+            -#  %td
+            -#    %div.book-wrapper
+            -#      %a.book-btn.btn{:href => "#"} Book
+            -#      %span £11,020 Saving

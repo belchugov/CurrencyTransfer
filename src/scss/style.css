@@ -1,170 +1,146 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
 html {
   color: #555;
   font-size: 1em;
-  line-height: 1.4;
-}
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
  */
-
 hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-
 audio,
 canvas,
 img,
 svg,
 video {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
-
 textarea {
-  resize: vertical;
-}
+  resize: vertical; }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-$family: unquote("Lato:400,700");
-@import url("http://fonts.googleapis.com/css?family=#{$family}");
+  box-sizing: border-box; }
 
 body {
   font-family: 'Lato', sans-serif;
   background-color: #eee;
-  color: #555555;
-}
+  color: #555555; }
+
 a {
-  text-decoration: none;
-}
+  text-decoration: none; }
+
 .content {
   width: 700px;
   margin: 60px auto;
   background-color: #FFF;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  padding-bottom: 30px;
-  h1 {
+  padding-bottom: 30px; }
+  .content h1 {
     font-size: 1.188em;
     font-weight: 600;
     line-height: 53px;
     text-transform: uppercase;
     display: inline-block;
     margin: 0;
-    padding-left: 22px;
-  }
-}
+    padding-left: 22px; }
+
 .content-headline {
   padding-right: 20px;
-  border-bottom: 1px solid #b7b8bb;
-  &:before {
+  border-bottom: 1px solid #b7b8bb; }
+  .content-headline:before {
     vertical-align: middle;
     float: left;
     content: "";
     width: 53px;
     height: 53px;
     display: inline-block;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjkuMTYxcHgiIGhlaWdodD0iMzAuNTk2cHgiIHZpZXdCb3g9IjAgMCAyOS4xNjEgMzAuNTk2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyOS4xNjEgMzAuNTk2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsLXJ1bGU6CWV2ZW5vZGQ7Y2xpcC1ydWxlOglldmVub2RkO2ZpbGw6CSNGRkZGRkY7fTwvc3R5bGU+PHBhdGggZD0iTTI4Ljc0MSAyNi4zNTJsLTMuODI1IDMuODI0Yy0wLjI1OSAwLjI2LTAuNjE3IDAuNDItMS4wMTQgMC40IGMtMC4zOTYgMC0wLjc1NC0wLjE2LTEuMDE0LTAuNDJsLTEuOTEyLTEuOTEyYy0wLjI2LTAuMjYtMC40Mi0wLjYxOS0wLjQyLTEuMDE2YzAtMC43OTEgMC42NDItMS40MzQgMS40MzQtMS40MzQgYzAuMzk2IDAgMC44IDAuMiAxIDAuNDJsMC44OTggMC44OThsMi44MTEtMi44MTFjMC4yNi0wLjI2IDAuNjE3LTAuNDIgMS4wMTQtMC40MmMwLjc5MyAwIDEuNCAwLjYgMS40IDEuNCBDMjkuMTYxIDI1LjcgMjkgMjYuMSAyOC43IDI2LjQgTTIzLjg4NCAyNS4xMjNjLTAuNTAzLTAuNDU1LTEuMTU5LTAuNzQyLTEuODk0LTAuNzQyYy0xLjU4NCAwLTIuODY4IDEuMjgzLTIuODY4IDIuOSBjMCAwLjggMC4zIDEuNSAwLjggMi4wMjFsLTAuMDA5IDAuMDA4bDEuMzE4IDEuMzE4SDEuNDM0QzAuNjQzIDMwLjYgMCAzMCAwIDI5LjE2MlY0LjMwMyBDMCAzLjUgMC42IDIuOSAxLjQgMi44NjloMi4zOTF2MS40MzRjMCAxLjYgMS4zIDIuOSAyLjkgMi44NjdjMS41ODQgMCAyLjg2Ny0xLjI4MyAyLjg2Ny0yLjg2N1YyLjg2OWgxLjQzNXYxLjQzNCBjMCAxLjYgMS4zIDIuOSAyLjkgMi44NjdzMi44NjktMS4yODMgMi44NjktMi44NjdWMi44NjloMS40MzR2MS40MzRjMCAxLjYgMS4zIDIuOSAyLjkgMi45IGMxLjU4NSAwIDIuODY4LTEuMjgzIDIuODY4LTIuODY3VjIuODY5aDIuMzkxYzAuNzkyIDAgMS40IDAuNiAxLjQgMS40MzR2MTguMTY2Yy0wLjc5MSAwLTEuNTA5IDAuMzItMi4wMjggMC44IEwyMy44ODQgMjUuMTIzeiBNMy44MjQgMjQuNjE5YzAgMC43IDAuNSAxLjIgMS4yIDEuMTk1aDkuMDgzYzAuNjYgMCAxLjE5NS0wLjUzNSAxLjE5NS0xLjE5NXMtMC41MzUtMS4xOTUtMS4xOTUtMS4xOTVINS4wMiBDNC4zNTkgMjMuNCAzLjggMjQgMy44IDI0LjYgTTIyLjQ2OSAxMC45OTZINS4yNTljLTAuNzkyIDAtMS40MzUgMC42NDEtMS40MzUgMS40MzRjMCAwLjggMC42IDEuNCAxLjQgMS40IGgxNy4yMWMwLjc5MiAwIDEuNDM0LTAuNjQzIDEuNDM0LTEuNDM0QzIzLjkwMiAxMS42IDIzLjMgMTEgMjIuNSAxMSBNMjIuNDY5IDE3LjIwOWgtOC42MDVoLTIuMzkxSDUuMjU5IGMtMC43OTIgMC0xLjQzNSAwLjY0My0xLjQzNSAxLjQzNmMwIDAuOCAwLjYgMS40IDEuNCAxLjQzNGg2LjIxNGgyLjM5MWg4LjYwNWMwLjc5MiAwIDEuNDM0LTAuNjQzIDEuNDM0LTEuNDM0IEMyMy45MDIgMTcuOSAyMy4zIDE3LjIgMjIuNSAxNy4yIE0yMS4wMzQgNS43MzZjLTAuNzkyIDAtMS40MzUtMC42NDEtMS40MzUtMS40MzRWMS40MzRDMTkuNiAwLjYgMjAuMiAwIDIxIDAgczEuNDM1IDAuNiAxLjQgMS40MzR2Mi44NjlDMjIuNDY5IDUuMSAyMS44IDUuNyAyMSA1LjcgTTEzLjg2MyA1LjczNmMtMC43OTIgMC0xLjQzNC0wLjY0MS0xLjQzNC0xLjQzNFYxLjQzNCBDMTIuNDMgMC42IDEzLjEgMCAxMy45IDBjMC43OTMgMCAxLjQgMC42IDEuNCAxLjQzNHYyLjg2OUMxNS4yOTggNS4xIDE0LjcgNS43IDEzLjkgNS43IE02LjY5MyA1LjcgYy0wLjc5MyAwLTEuNDM1LTAuNjQxLTEuNDM1LTEuNDM0VjEuNDM0QzUuMjU5IDAuNiA1LjkgMCA2LjcgMGMwLjc5MSAwIDEuNCAwLjYgMS40IDEuNDM0djIuODY5IEM4LjEyNyA1LjEgNy41IDUuNyA2LjcgNS43IiBjbGFzcz0ic3R5bGUwIi8+PC9zdmc+) no-repeat center center #14af78;
-  }
-}
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjkuMTYxcHgiIGhlaWdodD0iMzAuNTk2cHgiIHZpZXdCb3g9IjAgMCAyOS4xNjEgMzAuNTk2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyOS4xNjEgMzAuNTk2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsLXJ1bGU6CWV2ZW5vZGQ7Y2xpcC1ydWxlOglldmVub2RkO2ZpbGw6CSNGRkZGRkY7fTwvc3R5bGU+PHBhdGggZD0iTTI4Ljc0MSAyNi4zNTJsLTMuODI1IDMuODI0Yy0wLjI1OSAwLjI2LTAuNjE3IDAuNDItMS4wMTQgMC40IGMtMC4zOTYgMC0wLjc1NC0wLjE2LTEuMDE0LTAuNDJsLTEuOTEyLTEuOTEyYy0wLjI2LTAuMjYtMC40Mi0wLjYxOS0wLjQyLTEuMDE2YzAtMC43OTEgMC42NDItMS40MzQgMS40MzQtMS40MzQgYzAuMzk2IDAgMC44IDAuMiAxIDAuNDJsMC44OTggMC44OThsMi44MTEtMi44MTFjMC4yNi0wLjI2IDAuNjE3LTAuNDIgMS4wMTQtMC40MmMwLjc5MyAwIDEuNCAwLjYgMS40IDEuNCBDMjkuMTYxIDI1LjcgMjkgMjYuMSAyOC43IDI2LjQgTTIzLjg4NCAyNS4xMjNjLTAuNTAzLTAuNDU1LTEuMTU5LTAuNzQyLTEuODk0LTAuNzQyYy0xLjU4NCAwLTIuODY4IDEuMjgzLTIuODY4IDIuOSBjMCAwLjggMC4zIDEuNSAwLjggMi4wMjFsLTAuMDA5IDAuMDA4bDEuMzE4IDEuMzE4SDEuNDM0QzAuNjQzIDMwLjYgMCAzMCAwIDI5LjE2MlY0LjMwMyBDMCAzLjUgMC42IDIuOSAxLjQgMi44NjloMi4zOTF2MS40MzRjMCAxLjYgMS4zIDIuOSAyLjkgMi44NjdjMS41ODQgMCAyLjg2Ny0xLjI4MyAyLjg2Ny0yLjg2N1YyLjg2OWgxLjQzNXYxLjQzNCBjMCAxLjYgMS4zIDIuOSAyLjkgMi44NjdzMi44NjktMS4yODMgMi44NjktMi44NjdWMi44NjloMS40MzR2MS40MzRjMCAxLjYgMS4zIDIuOSAyLjkgMi45IGMxLjU4NSAwIDIuODY4LTEuMjgzIDIuODY4LTIuODY3VjIuODY5aDIuMzkxYzAuNzkyIDAgMS40IDAuNiAxLjQgMS40MzR2MTguMTY2Yy0wLjc5MSAwLTEuNTA5IDAuMzItMi4wMjggMC44IEwyMy44ODQgMjUuMTIzeiBNMy44MjQgMjQuNjE5YzAgMC43IDAuNSAxLjIgMS4yIDEuMTk1aDkuMDgzYzAuNjYgMCAxLjE5NS0wLjUzNSAxLjE5NS0xLjE5NXMtMC41MzUtMS4xOTUtMS4xOTUtMS4xOTVINS4wMiBDNC4zNTkgMjMuNCAzLjggMjQgMy44IDI0LjYgTTIyLjQ2OSAxMC45OTZINS4yNTljLTAuNzkyIDAtMS40MzUgMC42NDEtMS40MzUgMS40MzRjMCAwLjggMC42IDEuNCAxLjQgMS40IGgxNy4yMWMwLjc5MiAwIDEuNDM0LTAuNjQzIDEuNDM0LTEuNDM0QzIzLjkwMiAxMS42IDIzLjMgMTEgMjIuNSAxMSBNMjIuNDY5IDE3LjIwOWgtOC42MDVoLTIuMzkxSDUuMjU5IGMtMC43OTIgMC0xLjQzNSAwLjY0My0xLjQzNSAxLjQzNmMwIDAuOCAwLjYgMS40IDEuNCAxLjQzNGg2LjIxNGgyLjM5MWg4LjYwNWMwLjc5MiAwIDEuNDM0LTAuNjQzIDEuNDM0LTEuNDM0IEMyMy45MDIgMTcuOSAyMy4zIDE3LjIgMjIuNSAxNy4yIE0yMS4wMzQgNS43MzZjLTAuNzkyIDAtMS40MzUtMC42NDEtMS40MzUtMS40MzRWMS40MzRDMTkuNiAwLjYgMjAuMiAwIDIxIDAgczEuNDM1IDAuNiAxLjQgMS40MzR2Mi44NjlDMjIuNDY5IDUuMSAyMS44IDUuNyAyMSA1LjcgTTEzLjg2MyA1LjczNmMtMC43OTIgMC0xLjQzNC0wLjY0MS0xLjQzNC0xLjQzNFYxLjQzNCBDMTIuNDMgMC42IDEzLjEgMCAxMy45IDBjMC43OTMgMCAxLjQgMC42IDEuNCAxLjQzNHYyLjg2OUMxNS4yOTggNS4xIDE0LjcgNS43IDEzLjkgNS43IE02LjY5MyA1LjcgYy0wLjc5MyAwLTEuNDM1LTAuNjQxLTEuNDM1LTEuNDM0VjEuNDM0QzUuMjU5IDAuNiA1LjkgMCA2LjcgMGMwLjc5MSAwIDEuNCAwLjYgMS40IDEuNDM0djIuODY5IEM4LjEyNyA1LjEgNy41IDUuNyA2LjcgNS43IiBjbGFzcz0ic3R5bGUwIi8+PC9zdmc+) no-repeat center center #14af78; }
+
 .no-svg .content-headline:before {
-  background: url("../img/live-quates-logo.png") no-repeat left top;
-}
+  background: url("../img/live-quates-logo.png") no-repeat left top; }
+
 .expire {
   float: right;
   display: inline-block;
-  line-height: 53px;
-  span {
+  line-height: 53px; }
+  .expire span {
     color: #ea3a3a;
     font-size: 1.188em;
-    font-weight: 600;
-  }
-}
+    font-weight: 600; }
+
 .trade-info {
   text-align: center;
-  margin-bottom: 28px;
-  p {
+  margin-bottom: 28px; }
+  .trade-info p {
     margin-top: 6px;
-    margin-bottom: 12px;
-  }
-}
+    margin-bottom: 12px; }
+
 .status {
   height: 4px;
-  background-color: #78be54;
-}
+  background-color: #78be54; }
+
 .currency-from, .currency-to {
-  font-size: 1.125em;
-  span {
-    font-size: 20px;
-  }
-}
+  font-size: 1.125em; }
+  .currency-from span, .currency-to span {
+    font-size: 20px; }
+
 .exchange-rate {
   background-color: #195d7e;
   color: #fff;
   font-size: 1.563em;
   padding: 9px 18px 11px 35px;
   position: relative;
-  margin-right: 20px;
-  &:before, &:after {
+  margin-right: 20px; }
+  .exchange-rate:before, .exchange-rate:after {
     content: '';
     width: 0;
     height: 0;
@@ -172,84 +148,69 @@ a {
     border-left: 20px solid #fff;
     border-bottom: 25px solid transparent;
     position: absolute;
-    top: 0;
-  }
-  &:before {
-    left: 0;
-  }
-  &:after {
+    top: 0; }
+  .exchange-rate:before {
+    left: 0; }
+  .exchange-rate:after {
     right: 0;
-    border-left-color:  #195d7e;
-    margin-right: -20px;
-  }
-}
+    border-left-color: #195d7e;
+    margin-right: -20px; }
+
 /* ==========================================================================
    Provider list styles
    ========================================================================== */
 .providers-list-wrapper {
-  position: relative;
-}
+  position: relative; }
+
 .table {
   width: 100%;
-  font-size: 0.875em;
-  thead{
-    tr {
-      border-bottom: 1px solid #c1c3c5;
-    }
-    td {
-      text-align: center;
-    }
-  }
-  tbody {
-    border-bottom: 1px solid #c1c3c5;
-    tr:nth-child(2n) {
-      background-color: #eeeeee;
-    }
-    td {
+  font-size: 0.875em; }
+  .table thead tr {
+    border-bottom: 1px solid #c1c3c5; }
+  .table thead td {
+    text-align: center; }
+  .table tbody {
+    border-bottom: 1px solid #c1c3c5; }
+    .table tbody tr:nth-child(2n) {
+      background-color: #eeeeee; }
+    .table tbody td {
       padding: 13px;
       text-align: center;
-      vertical-align: middle;
-    }
-  }
-}
+      vertical-align: middle; }
+
 .provider-rate {
-  background: url("../img/provider-arrow.png") no-repeat left center,
-              url("../img/provider-arrow.png") no-repeat right center;
+  background: url("../img/provider-arrow.png") no-repeat left center, url("../img/provider-arrow.png") no-repeat right center;
   height: 52px;
   display: block;
   vertical-align: middle;
-  padding: 15px 30px;
-}
-.send-recive-currency {
-  font-weight: 600;
-  span {
-    display: block;
-  }
-}
+  padding: 15px 30px; }
+
+.send-receive-currency {
+  font-weight: 600; }
+  .send-receive-currency span {
+    display: block; }
+
 .book-wrapper {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   padding: 4px;
   border-radius: 3px;
   width: 120px;
-  background-color: #FFFFFF;
-  span {
+  background-color: #FFFFFF; }
+  .book-wrapper span {
     font-size: 0.857em;
     font-weight: 600;
     color: #14af78;
     display: inline-block;
     margin-top: 6px;
-    margin-bottom: 6px;
-    &:before {
+    margin-bottom: 6px; }
+    .book-wrapper span:before {
       content: "";
       float: left;
       margin-right: 5px;
       vertical-align: middle;
       width: 16px;
       height: 16px;
-      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTYuMzlweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYuMzkgMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2LjM5IDE2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsOgkjMjFBQzc4O308L3N0eWxlPjxyZWN0IHg9IjAuNCIgeT0iMTQiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyIiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMS40IiB5PSIxMSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIGNsYXNzPSJzdHlsZTAiLz48cmVjdCB4PSIxLjQiIHk9IjUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxIiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMi40IiB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSI0IiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMTIuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxyZWN0IHg9IjUuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxyZWN0IHg9IjkuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxwb2x5Z29uIHBvaW50cz0iOCwwIDAsNCAxNiw0IiBjbGFzcz0ic3R5bGUwIi8+PC9zdmc+) no-repeat;
-    }
-  }
-}
+      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTYuMzlweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYuMzkgMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2LjM5IDE2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsOgkjMjFBQzc4O308L3N0eWxlPjxyZWN0IHg9IjAuNCIgeT0iMTQiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyIiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMS40IiB5PSIxMSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIGNsYXNzPSJzdHlsZTAiLz48cmVjdCB4PSIxLjQiIHk9IjUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxIiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMi40IiB5PSI2IiB3aWR0aD0iMiIgaGVpZ2h0PSI0IiBjbGFzcz0ic3R5bGUwIi8+PHJlY3QgeD0iMTIuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxyZWN0IHg9IjUuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxyZWN0IHg9IjkuNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNCIgY2xhc3M9InN0eWxlMCIvPjxwb2x5Z29uIHBvaW50cz0iOCwwIDAsNCAxNiw0IiBjbGFzcz0ic3R5bGUwIi8+PC9zdmc+) no-repeat; }
 
 /* ==========================================================================
    Buttons styles
@@ -271,14 +232,14 @@ a {
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px
-}
+  border-radius: 4px; }
+
 .book-btn {
   color: #fff;
   background-color: #14af78;
   border-color: #d3f0e6;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
+
 .refresh-quote {
   color: #fff;
   background-color: #1695ca;
@@ -286,49 +247,43 @@ a {
   text-transform: uppercase;
   position: relative;
   padding-left: 56px;
-  padding-right: 24px;
-  span {
+  padding-right: 24px; }
+  .refresh-quote span {
     width: 30px;
     height: 30px;
     display: inline-block;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #117098;
-    &:before {
+    background-color: #117098; }
+    .refresh-quote span:before {
       content: "";
       width: 30px;
-      height: 30px ;
+      height: 30px;
       display: block;
       background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTVweCIgaGVpZ2h0PSIxNXB4IiB2aWV3Qm94PSIwIDAgMTUgMTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE1IDE1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsOgkjMTU3MTk5O30uc3R5bGUxe2ZpbGwtcnVsZToJZXZlbm9kZDtjbGlwLXJ1bGU6CWV2ZW5vZGQ7ZmlsbDoJI0ZGRkZGRjt9PC9zdHlsZT48Zz48cGF0aCBkaXNwbGF5PSJub25lIiBkPSJNLTUuNzc1LTguNDZjLTEuMTA0IDAtMiAwLjg5Ni0yIDJ2MjhjMCAxLjEgMC45IDIgMiAyaDI5LjIxMnYtMzJILTUuNzc1eiIgY2xhc3M9InN0eWxlMCIvPjxwYXRoIGQ9Ik0xNC4yOTYgNS4zOTFoLTAuNzAzaC0wLjM4N0gxMS4yNSBjLTAuMzg5IDAtMC43MDMtMC4zMTQtMC43MDMtMC43MDNzMC4zMTQtMC43MDMgMC43MDMtMC43MDNoMS4yMTFDMTEuMzU5IDIuNCA5LjYgMS40IDcuNSAxLjQgYy0zLjM2NSAwLTYuMDk0IDIuNzI5LTYuMDk0IDYuMDk0YzAgMC4zODktMC4zMTQgMC43MDMtMC43MDMgMC43MDNTMCA3LjkgMCA3LjVDMCAzLjQgMy40IDAgNy41IDAgYzIuNTE1IDAgNC43IDEuMiA2LjEgMy4xNDRWMS44NzVjMC0wLjM4OSAwLjMxNC0wLjcwMyAwLjcwMy0wLjcwM0MxNC42ODMgMS4yIDE1IDEuNSAxNSAxLjg3NXYyLjgxMyBDMTUgNS4xIDE0LjcgNS40IDE0LjMgNS40IE0wLjcwMyA5LjYwOUgzLjc1YzAuMzg5IDAgMC43IDAuMyAwLjcgMC43MDNzLTAuMzE0IDAuNzAzLTAuNzAzIDAuNzAzSDIuNTI5IGMxLjEwMiAxLjYgMi45IDIuNiA1IDIuNTc4YzMuMzY1IDAgNi4wOTMtMi43MjkgNi4wOTMtNi4wOTRjMC0wLjM4OSAwLjMxNC0wLjcwMyAwLjcwMy0wLjcwMyBDMTQuNjgzIDYuOCAxNSA3LjEgMTUgNy41YzAgNC4xNDMtMy4zNTcgNy41LTcuNSA3LjVjLTIuNTIgMC00LjczNi0xLjI0Ni02LjA5NC0zLjE1NHYxLjI3OWMwIDAuMzg5LTAuMzE0IDAuNzAzLTAuNzAzIDAuNyBTMCAxMy41IDAgMTMuMTI1di0yLjgxM0MwIDkuOSAwLjMgOS42IDAuNyA5LjYiIGNsYXNzPSJzdHlsZTEiLz48L2c+PC9zdmc+) no-repeat center center;
       -webkit-animation: rotation 2s linear infinite;
-      animation: rotation 2slinear infinite;
-    }
-  }
-
-}
+      animation: rotation 2slinear infinite; }
 
 /* ==========================================================================
    Overlay styles
    ========================================================================== */
 .overlay {
-  background-color: hsla(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   margin-top: 20px;
-  display: none;
-  &.active {
-    display: block;
-  }
-}
+  display: none; }
+  .overlay.active {
+    display: block; }
+
 .refresh-quote {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(-50%, -50%); }
 
 @-webkit-keyframes rotation {
   0% {
@@ -336,54 +291,39 @@ a {
     -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
+    transform: rotate(0deg); }
   50% {
     -ms-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
+    transform: rotate(180deg); }
   100% {
     -ms-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
+    transform: rotate(360deg); } }
 @keyframes rotation {
-  0% {    transform: rotate(0deg); }
-  50% {    transform: rotate(180deg);  }
-  100% {    transform: rotate(3600deg);
-  }
-}
-
-
-
-
-
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(3600deg); } }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
 /*
  * Hide visually and from screen readers: h5bp.com/u
  */
-
 .hidden {
   display: none !important;
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Hide only visually, but have it available for screen readers: h5bp.com/v
  */
-
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -392,14 +332,12 @@ a {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
-}
+  width: 1px; }
 
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -407,16 +345,13 @@ a {
   margin: 0;
   overflow: visible;
   position: static;
-  width: auto;
-}
+  width: auto; }
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-
 .invisible {
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Clearfix: contain floats
@@ -429,100 +364,81 @@ a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-
 .clearfix:before,
 .clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
 .clearfix:after {
-  clear: both;
-}
+  clear: both; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
+  /* Style adjustments for viewports that meet the condition */ }
+@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request: h5bp.com/r
    ========================================================================== */
-
 @media print {
   *,
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
-    text-shadow: none !important;
-  }
+    text-shadow: none !important; }
 
   a,
   a:visited {
-    text-decoration: underline;
-  }
+    text-decoration: underline; }
 
   a[href]:after {
-    content: " (" attr(href) ")";
-  }
+    content: " (" attr(href) ")"; }
 
   abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
+    content: " (" attr(title) ")"; }
 
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
-  }
+    content: ""; }
 
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+    page-break-inside: avoid; }
 
   thead {
-    display: table-header-group; /* h5bp.com/t */
-  }
+    display: table-header-group;
+    /* h5bp.com/t */ }
 
   tr,
   img {
-    page-break-inside: avoid;
-  }
+    page-break-inside: avoid; }
 
   img {
-    max-width: 100% !important;
-  }
+    max-width: 100% !important; }
 
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3;
-  }
+    widows: 3; }
 
   h2,
   h3 {
-    page-break-after: avoid;
-  }
-}
+    page-break-after: avoid; } }
+
+/*# sourceMappingURL=style.css.map */

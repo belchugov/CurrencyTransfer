@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app=''>
   <head lang='en'>
     <meta charset='UTF-8'>
     <title>CurrencyTransfer Test page</title>
-    <link href='scss/normalize.css' rel='stylesheet'>
-    <link href='scss/style.css' rel='stylesheet'>
-    <link href='scss/flag-icon.css' rel='stylesheet'>
+    <link href='css/normalize.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+    <link href='css/flag-icon.css' rel='stylesheet'>
+    <script src='js/libs/angular.min.js'></script>
+    <script src='js/app.js'></script>
   </head>
   <body>
-    <div class='content'>
+    <div class='content' ng-controller='LiveQuotes'>
       <div class='content-headline'>
         <h1>Live quotes</h1>
         <div class='expire'>
           Quotes expires in:
-          <span>4 seconds</span>
+          <span>{{ counter }} seconds</span>
         </div>
       </div>
       <div class='status'></div>
@@ -32,7 +34,7 @@
         </div>
       </div>
       <div class='providers-list-wrapper'>
-        <div class='overlay'>
+        <div class='overlay' ng-class="counter === 0 ? 'active'  : '' ">
           <a class='btn refresh-quote' href='#'>
             <span></span>
             refresh quote
@@ -49,47 +51,25 @@
             </tr>
           </thead>
           <tbody>
-            <tr class='provider'>
+            <tr class='provider' ng-repeat='provider in providers'>
               <td>
-                <img alt='Provider logo' src='http://lorempixel.com/120/70/business/1'>
+                <img alt='{{ provider.name }}' src='http://lorempixel.com/120/70/business/{{ $index }}'>
               </td>
-              <td class='send-recive-currency'>
-                20,000.00
-                <span>GBP</span>
-              </td>
-              <td>
-                <span class='provider-rate'>51.128</span>
-              </td>
-              <td class='send-recive-currency'>
-                35,000.00
-                <span>USD</span>
+              <td class='send-receive-currency'>
+                {{ provider.sending | currency:"" }}
+                <span>{{ provider.sendingISO }}</span>
               </td>
               <td>
-                <div class='book-wrapper'>
-                  <a class='book-btn btn' href='#'>Book</a>
-                  <span>£11,020 Saving</span>
-                </div>
+                <span class='provider-rate'>{{ provider.rate }}</span>
               </td>
-            </tr>
-            <tr class='provider'>
-              <td>
-                <img alt='Provider logo' src='http://lorempixel.com/120/70/business/2'>
-              </td>
-              <td class='send-recive-currency'>
-                1,000,000.00
-                <span>GBP</span>
-              </td>
-              <td>
-                <span class='provider-rate'>51.128</span>
-              </td>
-              <td class='send-recive-currency'>
-                173,084,568.00
-                <span>JPY</span>
+              <td class='send-receive-currency'>
+                {{ provider.receive | currency:""}}
+                <span>{{ provider.receiveISO }}</span>
               </td>
               <td>
                 <div class='book-wrapper'>
                   <a class='book-btn btn' href='#'>Book</a>
-                  <span>£11,020 Saving</span>
+                  <span>{{ provider.saving | currency:provider.savingISO}} Saving</span>
                 </div>
               </td>
             </tr>
