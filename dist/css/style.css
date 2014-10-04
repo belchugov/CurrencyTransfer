@@ -125,9 +125,36 @@ a {
     margin-bottom: 12px; }
 
 .status {
-  height: 4px;
-  background-color: #78be54; }
+  height: 4px; }
 
+.status-bar {
+  height: 4px;
+  -webkit-animation: status 15s linear forwards;
+  animation: status 15s linear forwards; }
+
+@-webkit-keyframes status {
+  0% {
+    width: 100%;
+    background-color: #78be54; }
+  50% {
+    width: 50%;
+    background-color: #78be54; }
+  70% {
+    width: 30%;
+    background-color: #F27B31; }
+  100% {
+    width: 0%;
+    background-color: #ea3a3a; } }
+@keyframes status {
+  0% {
+    width: 100%;
+    background-color: #78be54; }
+  70% {
+    width: 30%;
+    background-color: #F27B31; }
+  100% {
+    width: 0%;
+    background-color: #ea3a3a; } }
 .currency-from, .currency-to {
   font-size: 1.125em; }
   .currency-from span, .currency-to span {

@@ -1,1 +1,1 @@
-C:\RailsInstaller\Ruby1.9.3\bin\haml index.haml index.html
+C:\RailsInstaller\Ruby1.9.3\bin\haml src\index.haml dist\index.html
