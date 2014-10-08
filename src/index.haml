@@ -1,5 +1,5 @@
 !!!
-%html{"ng-app" => ""}
+%html{"data-ng-app" => ""}
   %head{:lang => "en"}
     %meta{:charset => "UTF-8"}/
     %title CurrencyTransfer Test page
@@ -10,12 +10,12 @@
     %script{:src => "js/libs/angular.min.js"}
     %script{:src => "js/app.js"}
   %body
-    .content{"ng-controller" => "LiveQuotes"}
+    .content{"data-ng-controller" => "LiveQuotes"}
       .content-headline
         %h1 Live quotes
         .expire
           Quotes expires in:
-          %span {{ counter }} seconds
+          %span {{ counter }} {{counter !== 1 ? 'seconds' : 'second'}}
       .status
         .status-bar
       .trade-info
@@ -29,7 +29,7 @@
             USD
             %span.flag-icon.flag-icon-us
       %div.providers-list-wrapper
-        %div.overlay{"ng-class" => "counter === 0 ? 'active'  : '' "}
+        %div.overlay{"data-ng-class" => "counter === 0 ? 'active'  : '' "}
           %a.btn.refresh-quote{:href => "#"}
             %span
             refresh quote
@@ -42,9 +42,9 @@
               %td Receive
               %td
           %tbody
-            %tr.provider{"ng-repeat" => "provider in providers"}
+            %tr.provider{"data-ng-repeat" => "provider in providers"}
               %td
-                %img{:alt => "{{ provider.name }}", :src => "http://lorempixel.com/120/70/business/{{ $index }}"}/
+                %img{:alt => "{{ provider.name }}", :"data-ng-src" => "http://lorempixel.com/120/70/business/{{ $index }}"}/
               %td.send-receive-currency
                 {{ provider.sending | currency:"" }}
                 %span {{ provider.sendingISO }}
@@ -57,18 +57,3 @@
                 %div.book-wrapper
                   %a.book-btn.btn{:href => "#"} Book
                   %span {{ provider.saving | currency:provider.savingISO}} Saving
-            -#%tr.provider
-            -#  %td
-            -#    %img{:alt => "Provider logo", :src => "http://lorempixel.com/120/70/business/2"}/
-            -#  %td.send-recive-currency
-            -#    1,000,000.00
-            -#    %span GBP
-            -#  %td
-            -#    %span.provider-rate 51.128
-            -#  %td.send-recive-currency
-            -#    173,084,568.00
-            -#    %span JPY
-            -#  %td
-            -#    %div.book-wrapper
-            -#      %a.book-btn.btn{:href => "#"} Book
-            -#      %span £11,020 Saving
