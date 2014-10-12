@@ -17,6 +17,7 @@ $RECYCLE.BIN/
 #local folders
 .idea/
 design/
+node_modules/
 
 # =========================
 # Operating System Files

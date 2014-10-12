@@ -1,0 +1,49 @@
+.content{"data-ng-controller" => "LiveQuotes"}
+  .content-headline
+    %h1 Live quotes
+    %timer{"start-time" => "15"}
+  .status
+    .status-bar
+  .trade-info
+    %p The market rate for transferring
+    %div
+      %span.currency-from
+        %span.flag-icon.flag-icon-gb
+        GBP
+      %span.exchange-rate 1.6134
+      %span.currency-to
+        USD
+        %span.flag-icon.flag-icon-us
+  .providers-list-wrapper
+    .overlay{"data-ng-class" => "bookOverlay ? 'active'  : '' "}
+      %a.btn.refresh-quote{:href => ""}
+        %span
+        Wait while booking
+    .overlay{"data-ng-class" => "counter === 0 ? 'active'  : '' "}
+      %a.btn.refresh-quote{"data-ng-click" => "refreshQuote()", :href => ""}
+        %span
+        refresh quote
+    %table.table.providers-list
+      %thead
+        %tr
+          %td
+          %td Sending
+          %td Your rate
+          %td Receive
+          %td
+      %tbody
+        %tr.provider{"data-ng-repeat" => "provider in providers"}
+          %td
+            %img{:alt => "", "data-ng-src" => "http://lorempixel.com/120/70/business/"}/
+          %td.send-receive-currency
+
+            %span
+          %td
+            %span.provider-rate
+          %td.send-receive-currency
+
+            %span
+          %td
+            .book-wrapper
+              %a.book-btn.btn{"data-ng-click" => "bookProvider(provider.name)", :href => ""} Book
+              %span  Saving

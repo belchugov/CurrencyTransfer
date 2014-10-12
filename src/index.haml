@@ -1,59 +1,17 @@
 !!!
-%html{"data-ng-app" => ""}
+%html{"data-ng-app" => "myApp"}
   %head{:lang => "en"}
     %meta{:charset => "UTF-8"}/
     %title CurrencyTransfer Test page
     %link{:href => "css/normalize.css", :rel => "stylesheet"}/
     %link{:href => "css/style.css", :rel => "stylesheet"}/
     %link{:href => "css/flag-icon.css", :rel => "stylesheet"}/
-
-    %script{:src => "js/libs/angular.min.js"}
+    %script{:src => "js/libs/angular.js"}
+    %script{:src => "js/libs/angular-route.js"}
+    %script{:src => "js/libs/underscore.js"}
     %script{:src => "js/app.js"}
+    %script{:src => "js/factories.js"}
+    %script{:src => "js/controllers.js"}
+    %script{:src => "js/directives.js"}
   %body
-    .content{"data-ng-controller" => "LiveQuotes"}
-      .content-headline
-        %h1 Live quotes
-        .expire
-          Quotes expires in:
-          %span {{ counter }} {{counter !== 1 ? 'seconds' : 'second'}}
-      .status
-        .status-bar
-      .trade-info
-        %p The market rate for transferring
-        %div
-          %span.currency-from
-            %span.flag-icon.flag-icon-gb
-            GBP
-          %span.exchange-rate 1.6134
-          %span.currency-to
-            USD
-            %span.flag-icon.flag-icon-us
-      %div.providers-list-wrapper
-        %div.overlay{"data-ng-class" => "counter === 0 ? 'active'  : '' "}
-          %a.btn.refresh-quote{:href => "#"}
-            %span
-            refresh quote
-        %table.table.providers-list
-          %thead
-            %tr
-              %td
-              %td Sending
-              %td Your rate
-              %td Receive
-              %td
-          %tbody
-            %tr.provider{"data-ng-repeat" => "provider in providers"}
-              %td
-                %img{:alt => "{{ provider.name }}", :"data-ng-src" => "http://lorempixel.com/120/70/business/{{ $index }}"}/
-              %td.send-receive-currency
-                {{ provider.sending | currency:"" }}
-                %span {{ provider.sendingISO }}
-              %td
-                %span.provider-rate {{ provider.rate }}
-              %td.send-receive-currency
-                {{ provider.receive | currency:""}}
-                %span {{ provider.receiveISO }}
-              %td
-                %div.book-wrapper
-                  %a.book-btn.btn{:href => "#"} Book
-                  %span {{ provider.saving | currency:provider.savingISO}} Saving
+    %div{"data-ng-view" => ""}

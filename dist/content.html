@@ -1,0 +1,72 @@
+<div class='content' data-ng-controller='LiveQuotes'>
+    <div class='content-headline'>
+        <h1>Live quotes</h1>
+        <timer start-time='12'></timer>
+    </div>
+    <div class='status {{ statusStyle }}'>
+        <div class='status-bar'></div>
+    </div>
+    <div class='trade-info'>
+        <p>The market rate for transferring</p>
+        <div>
+          <span class='currency-from'>
+            <span class='flag-icon flag-icon-gb'></span>
+            GBP
+          </span>
+            <span class='exchange-rate'>1.6134</span>
+          <span class='currency-to'>
+            USD
+            <span class='flag-icon flag-icon-us'></span>
+          </span>
+        </div>
+    </div>
+    <div class='providers-list-wrapper'>
+        <div class='overlay' data-ng-class="bookOverlay ? 'active'  : '' ">
+            <a class='btn refresh-quote' href=''>
+                <span></span>
+                Wait while booking
+            </a>
+        </div>
+        <div class='overlay' data-ng-class="counter === 0 ? 'active'  : '' ">
+            <a class='btn refresh-quote' data-ng-click='refreshQuote()' href=''>
+                <span></span>
+                refresh quote
+            </a>
+        </div>
+        <table class='table providers-list'>
+            <thead>
+            <tr>
+                <td></td>
+                <td>Sending</td>
+                <td>Your rate</td>
+                <td>Receive</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class='provider' data-ng-repeat='provider in providers'>
+                <td>
+                    <img alt='{{ provider.name }}' data-ng-src='http://lorempixel.com/120/70/business/{{ $index }}'>
+                </td>
+                <td class='send-receive-currency'>
+                    {{ provider.sending | currency:"" }}
+                    <span>{{ provider.sendingISO }}</span>
+                </td>
+                <td>
+                    <span class='provider-rate'>{{ provider.rate }}</span>
+                </td>
+                <td class='send-receive-currency'>
+                    {{ provider.receive | currency:""}}
+                    <span>{{ provider.receiveISO }}</span>
+                </td>
+                <td>
+                    <div class='book-wrapper'>
+                        <a class='book-btn btn' data-ng-click='bookProvider(provider.name)' href=''>Book</a>
+                        <span>{{ provider.saving | currency:provider.savingISO}} Saving</span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

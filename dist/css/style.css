@@ -128,7 +128,65 @@ a {
   height: 4px; }
 
 .status-bar {
-  height: 4px;
+  height: 4px; }
+
+.status-1 {
+  -webkit-animation: status 1s linear forwards;
+  animation: status 1s linear forwards; }
+
+.status-2 {
+  -webkit-animation: status 2s linear forwards;
+  animation: status 2s linear forwards; }
+
+.status-3 {
+  -webkit-animation: status 3s linear forwards;
+  animation: status 3s linear forwards; }
+
+.status-4 {
+  -webkit-animation: status 4s linear forwards;
+  animation: status 4s linear forwards; }
+
+.status-5 {
+  -webkit-animation: status 5s linear forwards;
+  animation: status 5s linear forwards; }
+
+.status-6 {
+  -webkit-animation: status 6s linear forwards;
+  animation: status 6s linear forwards; }
+
+.status-7 {
+  -webkit-animation: status 7s linear forwards;
+  animation: status 7s linear forwards; }
+
+.status-8 {
+  -webkit-animation: status 8s linear forwards;
+  animation: status 8s linear forwards; }
+
+.status-9 {
+  -webkit-animation: status 9s linear forwards;
+  animation: status 9s linear forwards; }
+
+.status-10 {
+  -webkit-animation: status 10s linear forwards;
+  animation: status 10s linear forwards; }
+
+.status-11 {
+  -webkit-animation: status 11s linear forwards;
+  animation: status 11s linear forwards; }
+
+.status-12 {
+  -webkit-animation: status 12s linear forwards;
+  animation: status 12s linear forwards; }
+
+.status-13 {
+  -webkit-animation: status 13s linear forwards;
+  animation: status 13s linear forwards; }
+
+.status-14 {
+  -webkit-animation: status 14s linear forwards;
+  animation: status 14s linear forwards; }
+
+.status-15 {
   -webkit-animation: status 15s linear forwards;
   animation: status 15s linear forwards; }
 
@@ -148,6 +206,9 @@ a {
 @keyframes status {
   0% {
     width: 100%;
+    background-color: #78be54; }
+  50% {
+    width: 50%;
     background-color: #78be54; }
   70% {
     width: 30%;

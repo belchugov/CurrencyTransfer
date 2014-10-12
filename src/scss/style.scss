@@ -153,9 +153,12 @@ a {
 }
 .status-bar {
   height: 4px;
-
-  -webkit-animation: status 15s linear forwards;
-  animation: status 15s linear forwards;
+}
+@for $i from 1 through 15 {
+  .status-#{$i} {
+    -webkit-animation: status #{$i}s linear forwards;
+    animation: status #{$i}s linear forwards;
+    }
 }
 @-webkit-keyframes status {
   0%   { width: 100%; background-color: #78be54;}

@@ -1,83 +1,20 @@
 <!DOCTYPE html>
-<html data-ng-app=''>
+<html data-ng-app='myApp'>
   <head lang='en'>
     <meta charset='UTF-8'>
     <title>CurrencyTransfer Test page</title>
     <link href='css/normalize.css' rel='stylesheet'>
     <link href='css/style.css' rel='stylesheet'>
     <link href='css/flag-icon.css' rel='stylesheet'>
-    <script src='js/libs/angular.min.js'></script>
+    <script src='js/libs/angular.js'></script>
+    <script src='js/libs/angular-route.js'></script>
+    <script src='js/libs/underscore.js'></script>
     <script src='js/app.js'></script>
+    <script src='js/factories.js'></script>
+    <script src='js/controllers.js'></script>
+    <script src='js/directives.js'></script>
   </head>
   <body>
-    <div class='content' data-ng-controller='LiveQuotes'>
-      <div class='content-headline'>
-        <h1>Live quotes</h1>
-        <div class='expire'>
-          Quotes expires in:
-          <span>{{ counter }} {{counter !== 1 ? 'seconds' : 'second'}}</span>
-        </div>
-      </div>
-      <div class='status'>
-        <div class='status-bar'></div>
-      </div>
-      <div class='trade-info'>
-        <p>The market rate for transferring</p>
-        <div>
-          <span class='currency-from'>
-            <span class='flag-icon flag-icon-gb'></span>
-            GBP
-          </span>
-          <span class='exchange-rate'>1.6134</span>
-          <span class='currency-to'>
-            USD
-            <span class='flag-icon flag-icon-us'></span>
-          </span>
-        </div>
-      </div>
-      <div class='providers-list-wrapper'>
-        <div class='overlay' data-ng-class="counter === 0 ? 'active'  : '' ">
-          <a class='btn refresh-quote' href='#'>
-            <span></span>
-            refresh quote
-          </a>
-        </div>
-        <table class='table providers-list'>
-          <thead>
-            <tr>
-              <td></td>
-              <td>Sending</td>
-              <td>Your rate</td>
-              <td>Receive</td>
-              <td></td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class='provider' data-ng-repeat='provider in providers'>
-              <td>
-                <img alt='{{ provider.name }}' data-ng-src='http://lorempixel.com/120/70/business/{{ $index }}'>
-              </td>
-              <td class='send-receive-currency'>
-                {{ provider.sending | currency:"" }}
-                <span>{{ provider.sendingISO }}</span>
-              </td>
-              <td>
-                <span class='provider-rate'>{{ provider.rate }}</span>
-              </td>
-              <td class='send-receive-currency'>
-                {{ provider.receive | currency:""}}
-                <span>{{ provider.receiveISO }}</span>
-              </td>
-              <td>
-                <div class='book-wrapper'>
-                  <a class='book-btn btn' href='#'>Book</a>
-                  <span>{{ provider.saving | currency:provider.savingISO}} Saving</span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <div data-ng-view=''></div>
   </body>
 </html>
